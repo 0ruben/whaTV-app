@@ -1,6 +1,6 @@
 angular.module('starter.service', [])
 
-.factory('fbConnect',['$http','$localStorage','$rootScope','$ionicLoading','$ionicPlatform','$location','$q','$connection',function($http,$localStorage,$rootScope,$ionicLoading,$ionicPlatform,$location, $q, $connection){
+.factory('fbConnect',['$http','$localStorage','$rootScope','$ionicLoading','$ionicPlatform','$location','$q',function($http,$localStorage,$rootScope,$ionicLoading,$ionicPlatform,$location, $q, $connection){
 
 //FACEBOOK CONNECT BEGINS
 
@@ -42,7 +42,6 @@ obj.getFacebookProfileInfo = function () {
     var info = $q.defer();
     facebookConnectPlugin.api('/me', "",
       function (response) {
-        alert("Result: " + JSON.stringify(response));
         info.resolve(response);
       },
       function (response) {
@@ -97,22 +96,21 @@ obj.connect = function(){
             //get user info from FB
             obj.getFacebookProfileInfo().then(function(data) {
               var user = data;
+              console.log(user);
 
-              user.picture = "http://graph.facebook.com/"+fb_uid+"/picture?width=400&height=400";
-              user.access_token = fb_access_token;
+              // user.picture = "http://graph.facebook.com/"+fb_uid+"/picture?width=400&height=400";
+              // user.access_token = fb_access_token;
 
               //save the user data
               //for the purpose of this example I will store it on ionic local storage but you should save it on a database
 
-              $http.post(serverAddress+'/facebookConnect',{email: user.email,first_name: user.first_name,last_name: user.last_name,facebook_id: fb_uid,fbtoken:fb_access_token}).success(function(response){
-                $localStorage.set('token',response.token);
+              $http.post(serverAddress+'/user/facebookConnect',{email: user.email, username: user.name,facebook_id: fb_uid}).success(function(response){
                 $localStorage.setObject('user',response);
-                $connection(response.id,function(){
+                
                   // $ionicLoading.hide();
-                  $location.path('/user/profil');
+                  $location.path('/');
 
 
-                },true);
               }).error(function(err){
                 console.log(err);
               });
@@ -142,3 +140,64 @@ obj.connect = function(){
 	  return obj;
 
 }])
+
+//Creating local Storage Function
+.factory('$localStorage', ['$window', function($window) {
+  return {
+    set: function(key, value) {
+      $window.localStorage[key] = value;
+    },
+    get: function(key, defaultValue) {
+      return $window.localStorage[key] || defaultValue;
+    },
+    setObject: function(key, value) {
+      $window.localStorage[key] = JSON.stringify(value);
+    },
+    getObject: function(key) {
+        return JSON.parse($window.localStorage[key] || '{}');
+    },
+    clearAll:function(){
+      $window.localStorage.clear();
+    },
+    setAttribute: function(key, property, attribute){
+      var object = JSON.parse($window.localStorage[key] || '{}');
+      object[property] = attribute;
+      $window.localStorage[key] = object;
+    },
+    addElement: function(key, element){
+      var object = JSON.parse($window.localStorage[key] || '[]');
+      object.push(element);
+      $window.localStorage[key] = JSON.stringify(object);
+    },
+    removeElement: function(key, element){
+      var object = JSON.parse($window.localStorage[key] || '[]');
+      object.splice(key,1);
+      $window.localStorage[key] = JSON.stringify(object);
+    },
+    getArray: function(key) {
+      return JSON.parse($window.localStorage[key] || '[]');
+    }
+  }
+}])
+.factory('User', ['$http','$localStorage','$rootScope','$ionicLoading','$ionicPlatform','$location','$q',function($http,$localStorage,$rootScope,$ionicLoading,$ionicPlatform,$location, $q, $connection){
+    
+var obj={};
+
+
+
+obj.register=function(user){
+
+    return  $http.post(serverAddress+'/user/create/',{username: user.username, password: user.password});
+
+}
+
+obj.login=function(user){
+
+    return  $http.post(serverAddress+'/user/login/',{username: user.username, password: user.password});
+
+
+}
+
+return obj;
+}])
+

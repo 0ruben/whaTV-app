@@ -1,1 +1,40 @@
 /* Empty. Add your own CSS if you like */
+.homepage_title{
+	text-align: center;
+}
+.homepage_logo{
+	width: 40px;
+	margin: 0 auto;
+  display: block;
+}
+.homepage_button{
+  
+  margin: 0 auto;
+  display:block;
+  text-align:center;
+  color:black;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight:bold;
+  letter-spacing: -3px;
+  cursor:pointer;
+  font-size:20px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-bottom: 10vw;
+  margin-top: 10vw;
+  width: 80%;
+}
+a{
+  text-decoration: none;
+}
+
+.registerbutton{
+  color:yellow;
+  border-radius: 15px;
+  width: 70%;
+}
+
+.settingsicon{
+  font-size: 30px;
+}
+

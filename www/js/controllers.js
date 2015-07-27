@@ -53,4 +53,47 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('AccountCtrl', function($scope, $stateParams) {
+})
+.controller('RegisterCtrl', function($scope, User, $stateParams) {
+   $scope.regularConnect=function(){
+      User.register($scope.user).success(function(user){
+             $localStorage.setObject('user',user);               
+                  // $ionicLoading.hide();
+                  $location.path('/');
+
+
+              }).error(function(err){
+                console.log(err);
+                $scope.err = "Problème lors de l'inscription";
+              });
+
+}
+})
+.controller('LoginCtrl', function($scope, $stateParams) {
+ $scope.connect=function(){
+  User.login($scope.user).success(function(user){
+             $localStorage.setObject('user',user);               
+                  // $ionicLoading.hide();
+                  $location.path('/');
+
+
+              }).error(function(err){
+                console.log(err);
+                $scope.err = "Problème lors de la connexion";
+              });
+ }
+})
+.controller('RecommendationsCtrl', function($scope, $stateParams,$state) {
+  $scope.account=function(){
+    $state.go('app.account');
+  }
+})
+
+.controller('ConnexionCtrl', function($scope, $stateParams, fbConnect) {
+  $scope.facebookConnect=function(){
+    fbConnect.connect();
+  }
 });
