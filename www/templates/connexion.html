@@ -1,0 +1,22 @@
+<ion-view view-title="Signin">
+  <ion-content class="padding">
+  <div ng-if="toShow" class="container_all">
+    <div class="col-90 homepage_logo_container">
+    	<img class="homepage_logo" ng-src="img/logo_rond.svg"/>
+    </div>
+    <div class="homepage_title">
+    	<h1> IDENTIFIEZ-VOUS </h1>
+    </div>
+   	<a href="#/login"><button class="button homepage_connect homepage_button icon-right ion-chevron-right">
+  		Connexion
+	</button></a>
+	 <a ng-click="facebookConnect()"><button class="button homepage_fb homepage_button">
+  		Connexion via Facebook
+	</button></a>
+	 <a href="#/register"><button class="button homepage_register homepage_button icon-right ion-chevron-right">
+  		Inscription
+	</button></a>
+  <p class="err_container"> {{err}} </p>
+  </div>
+  </ion-content>
+</ion-view>
