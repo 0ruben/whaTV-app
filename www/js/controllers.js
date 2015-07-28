@@ -103,7 +103,14 @@ angular.module('starter.controllers', [])
   $scope.account=function(){
     $state.go('app.account');
   }
- 
+ $scope.clientSideList = [
+    { text: "Quotidien", value: "q" },
+    { text: "Hebdomadaire", value: "h" },
+    { text: "Mensuel", value: "m" }
+  ];
+ $scope.chgmtFreq =function(attribute, value){
+  User.setNotifPref(attribute, value);
+ }
   $ionicModal.fromTemplateUrl('templates/account.html', {
     scope: $scope,
     animation: 'slide-in-up'
@@ -119,18 +126,25 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
+
+  $ionicModal.fromTemplateUrl('templates/search.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal1 = modal
+  })  
+
+  $scope.openModal1 = function() {
+    $scope.modal1.show()
+  }
+
+  $scope.closeModal1 = function() {
+    $scope.modal1.hide();
+  };
+
   $scope.$on('$destroy', function() {
     $scope.modal.remove();
   });
-  
-   $scope.clientSideList = [
-    { text: "Quotidien", value: "q" },
-    { text: "Hebdomadaire", value: "h" },
-    { text: "Mensuel", value: "m" }
-  ];
- $scope.chgmtFreq =function(attribute, value){
-  User.setNotifPref(attribute, value);
- }
 })
 
 .controller('ConnexionCtrl', function($scope, $stateParams, fbConnect) {
