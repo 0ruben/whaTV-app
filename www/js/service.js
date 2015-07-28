@@ -201,3 +201,20 @@ obj.login=function(user){
 return obj;
 }])
 
+
+.factory('Keywords',['$localStorage',function($localStorage){
+  var obj = {};
+
+  obj.getAll = function(){
+    var data = ["football", "jennifer lopez", "john lennon","chatte"];
+    return data;
+  }
+
+  obj.addElement = function(elem){
+    console.log(elem);
+    keywords = $localStorage.addElement("keywords",elem);
+  }
+
+  return obj;
+}])
+

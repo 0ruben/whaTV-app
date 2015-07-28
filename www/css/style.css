@@ -1,4 +1,8 @@
 /* Empty. Add your own CSS if you like */
+@font-face {
+    font-family: Fredoka;
+    src: url('../fonts/FredokaOne-Regular.ttf');
+}
 .homepage_title{
 	text-align: center;
 }
@@ -27,7 +31,9 @@
 a{
   text-decoration: none;
 }
-
+.scroll{
+  height: 100%;
+}
 .registerbutton{
   color:yellow;
   border-radius: 15px;
@@ -36,5 +42,28 @@ a{
 
 .settingsicon{
   font-size: 30px;
+}
+.background-green{
+  background-color: #1cf890;
+}
+.keyword-input{
+  border-radius: 30px;
+}
+.keyword-container{
+  height: 100%;
+}
+.keyword-element{
+  background-color: #fff;
+  width: 70%;
+  margin-left: 15%;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.keyword-element p{
+  margin-bottom: 0px;
+  text-align: center;
+  font-family: Fredoka, sans-serif;
 }
 

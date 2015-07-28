@@ -96,4 +96,16 @@ angular.module('starter.controllers', [])
   $scope.facebookConnect=function(){
     fbConnect.connect();
   }
+})
+
+.controller('SearchCtrl', function($scope, Keywords) {
+  $scope.keywords = Keywords.getAll();
+
+  $scope.addElem = function(elem){
+    Keywords.addElement(elem);
+  }
+
+  $scope.swing = function(e){
+    console.log(e.target);
+  }
 });
