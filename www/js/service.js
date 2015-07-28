@@ -51,7 +51,6 @@ obj.getFacebookProfileInfo = function () {
   }
 
 
-
 //This method is executed when the user press the "Login with facebook" button
 obj.connect = function(){
   if (!window.cordova) {
@@ -182,16 +181,29 @@ obj.connect = function(){
 .factory('User', ['$http','$localStorage','$rootScope','$ionicLoading','$ionicPlatform','$location','$q',function($http,$localStorage,$rootScope,$ionicLoading,$ionicPlatform,$location, $q, $connection){
     
 var obj={};
-var notif = {
-  push: true,
-  freq:'q'
-};
+obj.getUser = function(){
+  return $localStorage.getObject('user');
+}
 
 obj.setNotifPref = function(attr, pref){
   $localStorage.setAttribute('user', attr, pref);
   console.log($localStorage.getObject('user'));
 }
+obj.destroySession = function(){
+      $localStorage.clearAll();
+  }
 
+obj.checkSession = function(){
+    $q.defer=defer;
+
+    if($localStorage.getObject('user') && $localStorage.getObject('user').id){
+      defer.resolve(true);
+    } else {
+      defer.resolve(false);
+
+    return defer.promise;
+  }
+}
 obj.register=function(user){
 
     return  $http.post(serverAddress+'/user/create/',{username: user.username, password: user.password});
@@ -209,12 +221,11 @@ return obj;
 }])
 
 
-.factory('Keywords',['$localStorage',function($localStorage){
+.factory('Keywords',['$localStorage','$http',function($localStorage, $http){
   var obj = {};
 
-  obj.getAll = function(){
-    var data = ["football", "jennifer lopez", "john lennon","chatte"];
-    return data;
+  obj.getAll = function(word, limit){
+    return $http.get(serverAddress+'/getKeywords/?user='+User.getUser().id+"&keyword="+word+"&limit="+limit);
   }
 
   obj.addElement = function(elem,event){
@@ -225,6 +236,7 @@ return obj;
       target = event.target;
       $(target).addClass('animated zoomOutLeft');
 
+    $http.post(serverAddress+'keywordProgramme/addKeyword', {user: User.getUser().id, kw: elem.id});
   }
 
   return obj;

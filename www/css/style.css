@@ -1,43 +1,62 @@
-/* Empty. Add your own CSS if you like */
+
+.signin-page .homepage_logo{
+  width: 80px;
+}
 @font-face {
     font-family: Fredoka;
     src: url('../fonts/FredokaOne-Regular.ttf');
 }
 .homepage_title{
-	text-align: center;
+  text-align: center;
 }
 .homepage_logo{
-	width: 40px;
-	margin: 0 auto;
+  width: 40px;
+
+  margin: 0 auto;
   display: block;
+  margin-bottom: 20px;
 }
-.homepage_button{
+.signin-page .homepage_button{
   
   margin: 0 auto;
   display:block;
   text-align:center;
-  color:black;
-  font-family: Verdana, Geneva, sans-serif;
+  color: #e7ec53;
+  font-family: 'Montserrat', sans-serif;
   font-weight:bold;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   cursor:pointer;
   font-size:20px;
   border-radius: 10px;
   text-decoration: none;
   margin-bottom: 10vw;
   margin-top: 10vw;
-  width: 80%;
+  width: 40%;
+  border-color: black;
+  background-color: transparent;
 }
+
 a{
   text-decoration: none;
 }
+
+
+.signin-page .homepage_fb{
+  width: 70%;
+}
+
+
 .scroll{
   height: 100%;
 }
+
 .registerbutton{
   color:yellow;
   border-radius: 15px;
-  width: 70%;
+  width: 50%;
+  background-color: transparent;
+  margin-left: 30vw;
+
 }
 .hidden{
   display: none;
@@ -45,8 +64,60 @@ a{
 .settingsicon{
   font-size: 30px;
 }
+.recom-page{
+  background-color: grey;
+}
+
+
+.recom-page{
+
+  background-image: url(../img/fond4.jpg);
+}
+
+
+.recommendations-header{
+  background-color: black;
+  
+}
+
+.recom-page-title{
+  padding-bottom: 3vw;
+  font-size: 5vw;
+  display: inline-block;
+  margin-left: 8vw;
+  color:#e7ec53;
+
+}
+
+
+.recom-page .settingsicon{
+  font-size: 40px;
+  margin:10px;
+  display: inline-block;
+    color:#e7ec53;
+
+}
+
+
+.recom-page .plusicon{
+  font-size: 38px;
+  margin:10px;
+  margin-left: 10vw;
+  display: inline-block;
+  color:#e7ec53;
+
+}
+
+
+.recom-page .title h1{
+  display: inline-block;
+
+  margin-left: 4vw;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
 .background-green{
-  background-color: #1cf890;
+  background-color: #e7ec53;
 }
 .keyword-input{
   border-radius: 30px;
@@ -69,6 +140,69 @@ a{
   font-family: Fredoka, sans-serif;
 }
 
+.login-form {
+  font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
+
+}
+.register-view{
+  background-image: url(../img/fond4.jpg);
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.register-view h1{
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 38vw;
+  color: #e7ec53;
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: normal;
+}
+.registeritem{
+  color: #e7ec53;
+}
+
+.register-view .closebutton{
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 19vw;
+}
+.register-view{
+  background-color: transparent;
+}
+.button.button-block.button-positive{
+background-color: black;
+color : #e7ec53;
+font-weight: bold;
+}
+
+.login-view{
+  background-color: black;
+
+}
+
+/*.button.homepage_fb.homepage_button{
+background-image:url(../img/fconnect.png);
+background-size: 100vw;
+}*/
+
+.search-page{
+
+background-image : url(../img/blurred1.jpg);
+background-size: 300vw;
+
+}
+
+.ion-chevron-down.icon_modal{
+  font-size: 7vw;
+  padding-top: 1vw;
+  padding-left: 2vw;
+}
+
+
 .myname{
   text-align: center;
   font-size: 20px;
@@ -77,4 +211,14 @@ a{
 .keyword-added{
   font-size: 30px;
   font-family: Fredoka, sans-serif;
+}
+.signin-page .mytitle h1{
+  color: white;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+.signin-page {
+background-image: url(../img/fond4.jpg);
+background-size: cover;
+
 }
