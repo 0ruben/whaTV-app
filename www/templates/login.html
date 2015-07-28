@@ -2,19 +2,19 @@
   <ion-header-bar>
     <h1 class="title">Login</h1>
     <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+      <a href="#/app/connexion"> <button class="button button-clear">Close</button> </a>
     </div>
   </ion-header-bar>
   <ion-content>
     <form ng-submit="connect(user)" class='login-form'>
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="user.username">
+          <span class="input-label"></span>
+          <input type="text" placeholder="Username" ng-model="user.username">
         </label>
         <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="user.password">
+          <span class="input-label"></span>
+          <input type="password" ng-model="user.password" placeholder="Password">
         </label>
         <label class="item">
           <button class="button button-block button-positive" type="submit">Log in</button>
