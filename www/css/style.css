@@ -1,18 +1,18 @@
 
 .signin-page .homepage_logo{
-	width: 80px;
+  width: 80px;
 }
 @font-face {
     font-family: Fredoka;
     src: url('../fonts/FredokaOne-Regular.ttf');
 }
 .homepage_title{
-	text-align: center;
+  text-align: center;
 }
 .homepage_logo{
-	width: 40px;
+  width: 40px;
 
-	margin: 0 auto;
+  margin: 0 auto;
   display: block;
   margin-bottom: 20px;
 }
@@ -21,7 +21,7 @@
   margin: 0 auto;
   display:block;
   text-align:center;
-  color: #1cf890;
+  color: #e7ec53;
   font-family: 'Montserrat', sans-serif;
   font-weight:bold;
   letter-spacing: -2px;
@@ -74,7 +74,7 @@ a{
   font-family: 'Montserrat', sans-serif;
 }
 .background-green{
-  background-color: #1cf890;
+  background-color: #e7ec53;
 }
 .keyword-input{
   border-radius: 30px;
@@ -97,6 +97,21 @@ a{
   font-family: Fredoka, sans-serif;
 }
 
+.login-form {
+  font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
+}
+
+.button.button-block.button-positive{
+background-color: black;
+color : #e7ec53;
+font-weight: bold;
+}
+
+.login-view{
+  background-color: black;
+}
+
 .myname{
   text-align: center;
   font-size: 20px;
@@ -108,7 +123,7 @@ a{
   font-family: 'Montserrat', sans-serif;
 }
 .signin-page {
-background-image: url(../img/blurre.jpg);
+background-image: url(../img/fond4.jpg);
 background-size: cover;
 
 }
