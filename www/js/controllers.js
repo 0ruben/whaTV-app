@@ -85,9 +85,9 @@ angular.module('starter.controllers', [])
 
 }
 })
-.controller('LoginCtrl', function($scope, $stateParams,$localStorage, $location) {
- $scope.connect=function(){
-  User.login($scope.user).success(function(user){
+.controller('LoginCtrl', function($scope, $stateParams,$localStorage, $location, User) {
+ $scope.connect=function(user){
+  User.login(user).success(function(user){
              $localStorage.setObject('user',user);               
                   //$ionicLoading.hide();
                   $location.path('/');
@@ -99,14 +99,53 @@ angular.module('starter.controllers', [])
               });
  }
 })
-.controller('RecommendationsCtrl', function($scope, $stateParams,$state) {
+.controller('RecommendationsCtrl', function($scope, $stateParams,$state, $ionicModal, User) {
   $scope.account=function(){
     $state.go('app.account');
   }
+ 
+  $ionicModal.fromTemplateUrl('templates/account.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal
+  })  
+
+  $scope.openModal = function() {
+    $scope.modal.show()
+  }
+
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  
+   $scope.clientSideList = [
+    { text: "Quotidien", value: "q" },
+    { text: "Hebdomadaire", value: "h" },
+    { text: "Mensuel", value: "m" }
+  ];
+ $scope.chgmtFreq =function(attribute, value){
+  User.setNotifPref(attribute, value);
+ }
 })
 
 .controller('ConnexionCtrl', function($scope, $stateParams, fbConnect) {
   $scope.facebookConnect=function(){
     fbConnect.connect();
+  }
+})
+.controller('SearchCtrl', function($scope, Keywords) {
+  $scope.keywords = Keywords.getAll();
+
+  $scope.addElem = function(elem){
+    Keywords.addElement(elem);
+  }
+
+  $scope.swing = function(e){
+    console.log(e.target);
   }
 });

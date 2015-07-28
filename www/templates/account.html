@@ -1,13 +1,20 @@
-<ion-view view-title="Account">
-  <ion-content>
+<ion-modal view title="Account">
+  <div class="modal">
+   <ion-header-bar class="actu_header">
+     <i class="ion-chevron-down icon_modal" ng-click="closeModal()"></i>
+   <h1 class="title">Mon compte </h1>
+  </ion-header-bar>
+
+
+    <ion-content class="has-header">
   <h1 class="myname">{{user.username}}</h1>
   <ion-toggle ng-model="is_notif" ng-change="chgmtFreq('notif', is_notif )">
-  Activer les notifications
-</ion-toggle>
-<div ng-show="is_notif">
- <div class="item item-divider"> 
+    Activer les notifications
+  </ion-toggle>
+  <div ng-show="is_notif">
+  <div class="item item-divider"> 
           Frequence des Notifications
- </div>
+  </div>
         
         <ion-radio ng-repeat="item in clientSideList"
                    ng-value="item.value"
@@ -16,6 +23,7 @@
           {{ item.text }}
         </ion-radio>
 
- </div>
+  </div>
   </ion-content>
-</ion-view>
+  </div>
+</ion-modal view>

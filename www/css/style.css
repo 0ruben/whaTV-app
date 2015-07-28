@@ -1,6 +1,17 @@
 
 .signin-page .homepage_logo{
 	width: 80px;
+}
+@font-face {
+    font-family: Fredoka;
+    src: url('../fonts/FredokaOne-Regular.ttf');
+}
+.homepage_title{
+	text-align: center;
+}
+.homepage_logo{
+	width: 40px;
+
 	margin: 0 auto;
   display: block;
   margin-bottom: 20px;
@@ -29,8 +40,14 @@ a{
   text-decoration: none;
 }
 
+
 .signin-page .homepage_fb{
   width: 70%;
+}
+
+
+.scroll{
+  height: 100%;
 }
 
 .registerbutton{
@@ -39,8 +56,45 @@ a{
   width: 70%;
 }
 
-.settingsicon{
+.recom-page .settingsicon{
+  font-size: 40px;
+  margin:10px;
+  display: inline-block;
+}
+.recom-page .plusicon{
+  font-size: 38px;
+  margin:10px;
+  margin-left: 7vw;
+}
+.recom-page .title{
+  display: inline-block;
+  text-align: center;
+  margin-left: 7vw;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+.background-green{
+  background-color: #1cf890;
+}
+.keyword-input{
+  border-radius: 30px;
+}
+.keyword-container{
+  height: 100%;
+}
+.keyword-element{
+  background-color: #fff;
+  width: 70%;
+  margin-left: 15%;
   font-size: 30px;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.keyword-element p{
+  margin-bottom: 0px;
+  text-align: center;
+  font-family: Fredoka, sans-serif;
 }
 
 .myname{

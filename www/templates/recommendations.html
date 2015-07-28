@@ -1,8 +1,10 @@
-<ion-view view-title="Your Recommendations">
-<ion-nav-buttons side="right">
-<i class ="settingsicon ion-settings" ng-click="account()"></i>
- </ion-nav-buttons> 
+<ion-view view-title="Your Recommendations" class="recom-page">
   <ion-content>
+
+  <i class ="settingsicon ion-settings" ng-click="openModal()"></i>
+    <h1 class="title"> Vos recommendations </h1>
+  <i class ="plusicon ion-plus-round" ng-click="openModal()"></i>
+    
     <ion-list>
       <ion-item ng-repeat="recommendation in recommendationss" >
       <img ng-src="{{recommendation.logo}}"
