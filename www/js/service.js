@@ -231,7 +231,7 @@ return obj;
   obj.addElement = function(elem){
     console.log(elem);
     keywords = $localStorage.addElement("keywords",elem);
-    $http.post(serverAddress+'keywordProgramme/addKeyword', {user: User.getUser().id, world : elem+"&limit="+limit});
+    $http.post(serverAddress+'keywordProgramme/addKeyword', {user: User.getUser().id, kw: elem.id});
   }
 
   return obj;
