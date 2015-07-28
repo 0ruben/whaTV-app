@@ -7,10 +7,17 @@
 var serverAddress='http://62.210.115.66:1337';
 
 angular.module('starter', ['ionic', 'starter.controllers','starter.service'])
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, User, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
+  $ionicPlatform.on("resume",function(){
+        User.checkSession().then(function(hasSession) {
+        if (!hasSession){ $state.go('app.connexion');}
+        else{$state.go('app.recommendations');}
+      });
+  })
+  
+      
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);

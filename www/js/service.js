@@ -51,7 +51,6 @@ obj.getFacebookProfileInfo = function () {
   }
 
 
-
 //This method is executed when the user press the "Login with facebook" button
 obj.connect = function(){
   if (!window.cordova) {
@@ -191,7 +190,21 @@ obj.setNotifPref = function(attr, pref){
   $localStorage.setAttribute('user', attr, pref);
   console.log($localStorage.getObject('user'));
 }
+obj.destroySession = function(){
+      $localStorage.clearAll();
+  }
+  
+obj.checkSession = function(){
+    $q.defer=defer;
 
+    if($localStorage.getObject('user') && $localStorage.getObject('user').id){
+      defer.resolve(true);
+    } else {
+      defer.resolve(false);
+
+    return defer.promise;
+  }
+}
 obj.register=function(user){
 
     return  $http.post(serverAddress+'/user/create/',{username: user.username, password: user.password});

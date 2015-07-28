@@ -99,9 +99,14 @@ angular.module('starter.controllers', [])
               });
  }
 })
-.controller('RecommendationsCtrl', function($scope, $stateParams,$state, $ionicModal, User) {
+.controller('RecommendationsCtrl', function($scope, $stateParams,$state, $window, $ionicModal, User) {
   $scope.account=function(){
     $state.go('app.account');
+  }
+  $scope.logout=function(){
+    User.destroySession();
+     $scope.modal.hide();
+    $state.go('app.connexion');
   }
  $scope.clientSideList = [
     { text: "Quotidien", value: "q" },
