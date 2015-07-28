@@ -107,7 +107,7 @@ obj.connect = function(){
               $http.post(serverAddress+'/user/facebookConnect',{email: user.email, username: user.name,facebook_id: fb_uid}).success(function(response){
                 $localStorage.setObject('user',response);
                 
-                  // $ionicLoading.hide();
+                  $ionicLoading.hide();
                   $location.path('/');
 
 
@@ -162,7 +162,7 @@ obj.connect = function(){
     setAttribute: function(key, property, attribute){
       var object = JSON.parse($window.localStorage[key] || '{}');
       object[property] = attribute;
-      $window.localStorage[key] = object;
+      $window.localStorage[key] = JSON.stringify(object);
     },
     addElement: function(key, element){
       var object = JSON.parse($window.localStorage[key] || '[]');
@@ -182,8 +182,15 @@ obj.connect = function(){
 .factory('User', ['$http','$localStorage','$rootScope','$ionicLoading','$ionicPlatform','$location','$q',function($http,$localStorage,$rootScope,$ionicLoading,$ionicPlatform,$location, $q, $connection){
     
 var obj={};
+var notif = {
+  push: true,
+  freq:'q'
+};
 
-
+obj.setNotifPref = function(attr, pref){
+  $localStorage.setAttribute('user', attr, pref);
+  console.log($localStorage.getObject('user'));
+}
 
 obj.register=function(user){
 
