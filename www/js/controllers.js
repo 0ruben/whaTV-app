@@ -55,13 +55,26 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('AccountCtrl', function($scope, $stateParams) {
+.controller('AccountCtrl', function($scope, User, $stateParams) {
+  User.push=$scope.notifications;
+
+  $scope.clientSideList = [
+    { text: "Quotidien", value: "q" },
+    { text: "Hebdomadaire", value: "h" },
+    { text: "Mensuel", value: "m" }
+  ];
+ $scope.chgmtFreq =function(attribute, value){
+  User.setNotifPref(attribute, value);
+ }
 })
-.controller('RegisterCtrl', function($scope, User, $stateParams) {
-   $scope.regularConnect=function(){
-      User.register($scope.user).success(function(user){
+
+.controller('RegisterCtrl', function($scope, User, $stateParams, $localStorage,$location) {
+   $scope.regularConnect=function(user){
+    console.log(user);
+      User.register(user).success(function(user){
              $localStorage.setObject('user',user);               
-                  // $ionicLoading.hide();
+                 // $ionicLoading.hide();
+                 console.log("here");
                   $location.path('/');
 
 
@@ -72,11 +85,11 @@ angular.module('starter.controllers', [])
 
 }
 })
-.controller('LoginCtrl', function($scope, $stateParams) {
+.controller('LoginCtrl', function($scope, $stateParams,$localStorage, $location) {
  $scope.connect=function(){
   User.login($scope.user).success(function(user){
              $localStorage.setObject('user',user);               
-                  // $ionicLoading.hide();
+                  //$ionicLoading.hide();
                   $location.path('/');
 
 
