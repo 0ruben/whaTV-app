@@ -56,6 +56,7 @@ a{
   width: 50%;
   background-color: transparent;
   margin-left: 30vw;
+
 }
 
 .recom-page{
@@ -70,12 +71,17 @@ a{
 
 
 .recommendations-header{
-  background-color: white;
+  background-color: black;
+  
 }
 
 .recom-page-title{
-  padding-bottom: 2vw;
+  padding-bottom: 3vw;
   font-size: 5vw;
+  display: inline-block;
+  margin-left: 8vw;
+  color:#e7ec53;
+
 }
 
 
@@ -83,22 +89,26 @@ a{
   font-size: 40px;
   margin:10px;
   display: inline-block;
+    color:#e7ec53;
+
 }
 
 
 .recom-page .plusicon{
   font-size: 38px;
   margin:10px;
-  margin-left: 7vw;
-  text-align: left;
+  margin-left: 10vw;
+  display: inline-block;
+  color:#e7ec53;
+
 }
 
 
-.recom-page .title{
+.recom-page .title h1{
   display: inline-block;
-  text-align: center;
-  margin-left: 7vw;
-  font-size: 20px;
+
+  margin-left: 4vw;
+  font-size: 15px;
   font-family: 'Montserrat', sans-serif;
 }
 .background-green{
