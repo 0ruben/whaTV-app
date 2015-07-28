@@ -1,23 +1,20 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Register</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
-    </div>
-  </ion-header-bar>
-  <ion-content>
+<ion-modal-view class="register-view">
+<ion-content>
+    <h1 class="title"> Register</h1>
+      <i class="closebutton button-clear" ng-click="closeLogin()">Close</i>
+  
     <form ng-submit="regularConnect(user)">
       <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
+        <label class=" item-input registeritem">
+          <span class="input-label registeritem">Username</span>
           <input type="text" ng-model="user.username">
         </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
+        <label class=" item-input registeritem">
+          <span class="input-label registeritem">Password</span>
           <input type="password" ng-model="user.password">
         </label>
-        <label class="item">
-          <button class="registerbutton button-block button-positive" type="submit">Register</button>
+        <label class="registeritem">
+          <button class="registerbutton button-positive" type="submit">Register</button>
         </label>
       </div>
     </form>
