@@ -58,16 +58,25 @@ a{
   margin-left: 30vw;
 }
 
+.recom-page{
+
+  background-image: url(../img/fond4.jpg);
+}
+
 .recom-page .settingsicon{
   font-size: 40px;
   margin:10px;
   display: inline-block;
 }
+
+
 .recom-page .plusicon{
   font-size: 38px;
   margin:10px;
   margin-left: 7vw;
 }
+
+
 .recom-page .title{
   display: inline-block;
   text-align: center;
@@ -105,7 +114,11 @@ a{
 }
 .register-view{
   background-image: url(../img/fond4.jpg);
+  font-family: 'Montserrat', sans-serif;
 }
+
+
+
 .register-view h1{
   display: inline-block;
   text-align: center;
@@ -113,6 +126,7 @@ a{
   margin-left: 38vw;
   color: #e7ec53;
   font-family: 'Montserrat', sans-serif; 
+  font-weight: normal;
 }
 .registeritem{
   color: #e7ec53;
@@ -141,6 +155,18 @@ background-image:url(../img/fconnect.png);
 background-size: 100vw;
 }*/
 
+.search-page{
+
+background-image : url(../img/blurred1.jpg);
+background-size: 300vw;
+
+}
+
+.ion-chevron-down.icon_modal{
+  font-size: 7vw;
+  padding-top: 1vw;
+  padding-left: 2vw;
+}
 
 
 .myname{
