@@ -69,6 +69,16 @@ a{
 }
 
 
+.recommendations-header{
+  background-color: white;
+}
+
+.recom-page-title{
+  padding-bottom: 2vw;
+  font-size: 5vw;
+}
+
+
 .recom-page .settingsicon{
   font-size: 40px;
   margin:10px;
@@ -80,6 +90,7 @@ a{
   font-size: 38px;
   margin:10px;
   margin-left: 7vw;
+  text-align: left;
 }
 
 
@@ -117,6 +128,7 @@ a{
 .login-form {
   font-family: 'Montserrat', sans-serif;
   background-color: transparent;
+
 }
 .register-view{
   background-image: url(../img/fond4.jpg);
@@ -154,6 +166,7 @@ font-weight: bold;
 
 .login-view{
   background-color: black;
+
 }
 
 /*.button.homepage_fb.homepage_button{
