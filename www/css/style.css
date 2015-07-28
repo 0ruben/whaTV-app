@@ -1,31 +1,36 @@
-/* Empty. Add your own CSS if you like */
-.homepage_title{
-	text-align: center;
-}
-.homepage_logo{
-	width: 40px;
+
+.signin-page .homepage_logo{
+	width: 80px;
 	margin: 0 auto;
   display: block;
+  margin-bottom: 20px;
 }
-.homepage_button{
+.signin-page .homepage_button{
   
   margin: 0 auto;
   display:block;
   text-align:center;
-  color:black;
-  font-family: Verdana, Geneva, sans-serif;
+  color: #1cf890;
+  font-family: 'Montserrat', sans-serif;
   font-weight:bold;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   cursor:pointer;
   font-size:20px;
   border-radius: 10px;
   text-decoration: none;
   margin-bottom: 10vw;
   margin-top: 10vw;
-  width: 80%;
+  width: 40%;
+  border-color: black;
+  background-color: transparent;
 }
+
 a{
   text-decoration: none;
+}
+
+.signin-page .homepage_fb{
+  width: 70%;
 }
 
 .registerbutton{
@@ -43,3 +48,13 @@ a{
   font-size: 20px;
 }
 
+.signin-page .mytitle h1{
+  color: white;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+.signin-page {
+background-image: url(../img/blurre.jpg);
+background-size: cover;
+
+}
