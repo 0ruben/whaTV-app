@@ -158,7 +158,11 @@ angular.module('starter.controllers', [])
   }
 })
 .controller('SearchCtrl', function($scope, Keywords) {
-  $scope.keywords = Keywords.getAll();
+ Keywords.getAll().success(function(keywords){
+  $scope.keywords = keywords;
+ }).error(function(err){
+console.log(err);
+ })
 
   $scope.addElem = function(elem){
     Keywords.addElement(elem);

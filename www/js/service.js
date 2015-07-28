@@ -181,10 +181,9 @@ obj.connect = function(){
 .factory('User', ['$http','$localStorage','$rootScope','$ionicLoading','$ionicPlatform','$location','$q',function($http,$localStorage,$rootScope,$ionicLoading,$ionicPlatform,$location, $q, $connection){
     
 var obj={};
-var notif = {
-  push: true,
-  freq:'q'
-};
+obj.getUser = function(){
+  return $localStorage.getObject('user');
+}
 
 obj.setNotifPref = function(attr, pref){
   $localStorage.setAttribute('user', attr, pref);
@@ -193,7 +192,7 @@ obj.setNotifPref = function(attr, pref){
 obj.destroySession = function(){
       $localStorage.clearAll();
   }
-  
+
 obj.checkSession = function(){
     $q.defer=defer;
 
@@ -222,17 +221,17 @@ return obj;
 }])
 
 
-.factory('Keywords',['$localStorage',function($localStorage){
+.factory('Keywords',['$localStorage',function($localStorage, $http){
   var obj = {};
 
-  obj.getAll = function(){
-    var data = ["football", "jennifer lopez", "john lennon","chatte"];
-    return data;
+  obj.getAll = function(word, limit){
+    return $http.get(serverAddress+'/getKeywords/?user='+User.getUser().id+"&keyword="+word+"&limit="+limit);
   }
 
   obj.addElement = function(elem){
     console.log(elem);
     keywords = $localStorage.addElement("keywords",elem);
+    $http.post(serverAddress+'keywordProgramme/addKeyword', {user: User.getUser().id, world : elem+"&limit="+limit});
   }
 
   return obj;
