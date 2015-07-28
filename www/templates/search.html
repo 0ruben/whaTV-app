@@ -7,7 +7,7 @@
 		<input type="text" placeholder="Chercher un mot clé">
 	</label>
 </div>
-<div ng-click="addElem(keyword)" on-touch="swing($event)" class="keyword-element" ng-repeat = "keyword in keywords">
+<div on-release="addElem(keyword,$event)" on-touch="swing($event)" class="keyword-element" ng-repeat = "keyword in keywords">
 	<p> {{keyword}} </p>
 </div>
 </div>

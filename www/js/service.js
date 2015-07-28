@@ -217,9 +217,14 @@ return obj;
     return data;
   }
 
-  obj.addElement = function(elem){
-    console.log(elem);
+  obj.addElement = function(elem,event){
     keywords = $localStorage.addElement("keywords",elem);
+    if(!$(event.target).hasClass('keyword-element'))
+      target = $(event.target).parent('.keyword-element');
+    else
+      target = event.target;
+      $(target).addClass('animated zoomOutLeft');
+
   }
 
   return obj;

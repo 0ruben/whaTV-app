@@ -39,7 +39,9 @@ a{
   border-radius: 15px;
   width: 70%;
 }
-
+.hidden{
+  display: none;
+}
 .settingsicon{
   font-size: 30px;
 }
@@ -72,3 +74,7 @@ a{
   font-size: 20px;
 }
 
+.keyword-added{
+  font-size: 30px;
+  font-family: Fredoka, sans-serif;
+}
