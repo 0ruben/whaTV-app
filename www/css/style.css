@@ -1,4 +1,13 @@
-
+.actu_header{
+   background-image: url('../img/blue.png');
+}
+.grey-item{
+  background-color: #45658f;
+}
+.account-page .grey-item,.account-page .item-radio{
+    background-color: transparent;
+    color: black;
+}
 .signin-page .homepage_logo{
   width: 80px;
 }
@@ -81,11 +90,16 @@ a{
 }
 
 .recom-page-title{
-  padding-bottom: 3vw;
+  padding-bottom: 0vw;
+  margin-bottom: 3vw;
   font-size: 5vw;
   display: inline-block;
-  margin-left: 8vw;
+  margin-left: 20%;
+  position: absolute;
   color:#e7ec53;
+  font-family: 'Lobster Two', cursive;
+  font-weight: bold;
+  letter-spacing: 1px;
 
 }
 
@@ -101,8 +115,7 @@ a{
 
 .recom-page .plusicon{
   font-size: 38px;
-  margin:10px;
-  margin-left: 10vw;
+  margin-left: 70%;
   display: inline-block;
   color:#e7ec53;
 
@@ -114,7 +127,7 @@ a{
 
   margin-left: 4vw;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+ /* font-family: 'Montserrat', sans-serif;*/
 }
 .background-green{
   background-color: #e7ec53;
@@ -189,7 +202,7 @@ background-image:url(../img/fconnect.png);
 background-size: 100vw;
 }*/
 
-.search-page{
+.search-page, .account-page{
 
 background-image : url(../img/blurred1.jpg);
 background-size: 300vw;
