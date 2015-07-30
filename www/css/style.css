@@ -35,7 +35,11 @@
   border-color: black;
   background-color: transparent;
 }
-
+.signin-page {
+background-image: url(../img/dark31.jpg);
+/*background-color: grey;
+*/background-size: cover;
+}
 a{
   text-decoration: none;
 }
@@ -50,7 +54,7 @@ a{
   height: 100%;
 }
 
-.registerbutton{
+.register-button{
   color:yellow;
   border-radius: 15px;
   width: 50%;
@@ -61,12 +65,9 @@ a{
 
 .recom-page{
   background-color: grey;
-}
-
-
-.recom-page{
-
-  background-image: url(../img/fond4.jpg);
+  background-image: url(../img/dark31.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -100,7 +101,7 @@ a{
   margin-left: 10vw;
   display: inline-block;
   color:#e7ec53;
-
+  text-align: right;
 }
 
 
@@ -140,22 +141,12 @@ a{
   background-color: transparent;
 
 }
-.register-view{
-  background-image: url(../img/fond4.jpg);
-  font-family: 'Montserrat', sans-serif;
-}
 
 
 
 .register-view h1{
-  display: inline-block;
-  text-align: center;
-  font-size: 20px;
-  margin-left: 38vw;
-  color: #e7ec53;
-  font-family: 'Montserrat', sans-serif; 
-  font-weight: normal;
 }
+
 .registeritem{
   color: #e7ec53;
 }
@@ -165,28 +156,39 @@ a{
   font-size: 20px;
   margin-left: 19vw;
 }
-.register-view{
-  background-color: transparent;
-}
+
 .button.button-block.button-positive{
-background-color: black;
-color : #e7ec53;
-font-weight: bold;
+  background-color: black;
+  color : #e7ec53;
+  font-weight: bold;
 }
 
 .login-view{
   background-color: black;
+  background-image : url(../img/dark31.jpg);
 
 }
+
+.login-header-bar{
+  /*background-color: black;*/
+  font-color: white;
+}
+
 
 /*.button.homepage_fb.homepage_button{
 background-image:url(../img/fconnect.png);
 background-size: 100vw;
 }*/
 
+.account-page{
+  background-image : url(../img/dark31.jpg);
+  background-size: 300vw;
+
+}
+
 .search-page{
 
-background-image : url(../img/blurred1.jpg);
+background-image : url(../img/dark31.jpg);
 background-size: 300vw;
 
 }
@@ -207,9 +209,4 @@ background-size: 300vw;
   color: white;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-}
-.signin-page {
-background-image: url(../img/fond4.jpg);
-background-size: cover;
-
 }
