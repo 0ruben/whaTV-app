@@ -221,16 +221,21 @@ return obj;
 }])
 
 
-.factory('Keywords',['$localStorage',function($localStorage, $http){
+.factory('Keywords',['$localStorage','$http',function($localStorage, $http){
   var obj = {};
 
   obj.getAll = function(word, limit){
     return $http.get(serverAddress+'/getKeywords/?user='+User.getUser().id+"&keyword="+word+"&limit="+limit);
   }
 
-  obj.addElement = function(elem){
-    console.log(elem);
+  obj.addElement = function(elem,event){
     keywords = $localStorage.addElement("keywords",elem);
+    if(!$(event.target).hasClass('keyword-element'))
+      target = $(event.target).parent('.keyword-element');
+    else
+      target = event.target;
+      $(target).addClass('animated zoomOutLeft');
+
     $http.post(serverAddress+'keywordProgramme/addKeyword', {user: User.getUser().id, kw: elem.id});
   }
 

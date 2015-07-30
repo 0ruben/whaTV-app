@@ -164,11 +164,15 @@ angular.module('starter.controllers', [])
 console.log(err);
  })
 
-  $scope.addElem = function(elem){
-    Keywords.addElement(elem);
+  $scope.addElem = function(elem,event){
+    Keywords.addElement(elem,event);
   }
 
   $scope.swing = function(e){
-    console.log(e.target);
+    if(!$(e.target).hasClass('keyword-element'))
+      elem = $(e.target).parent('.keyword-element');
+    else
+      elem = e.target;
+      $(elem).addClass('animated swing');
   }
 });

@@ -62,7 +62,12 @@ a{
   margin-left: 30vw;
 
 }
-
+.hidden{
+  display: none;
+}
+.settingsicon{
+  font-size: 30px;
+}
 .recom-page{
   background-color: grey;
   background-image: url(../img/dark31.jpg);
@@ -205,8 +210,20 @@ background-size: 300vw;
   font-size: 20px;
 }
 
+.keyword-added{
+  font-size: 30px;
+  font-family: Fredoka, sans-serif;
+}
 .signin-page .mytitle h1{
   color: white;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
+<<<<<<< HEAD
+=======
+.signin-page {
+background-image: url(../img/fond4.jpg);
+background-size: cover;
+
+}
+>>>>>>> origin/master
