@@ -304,12 +304,7 @@ background-size: 100vw;
   height: 15vw;
 }
 .likeicon{
-  background-color: transparent;
-  margin-left: 3px;
-  padding-top:1px;
-  line-height: 13px;
-}
-.item-like{
+
   position: absolute;
   right : 0;
   top : 0;
@@ -318,7 +313,12 @@ background-size: 100vw;
   color: white;
   /*margin-top: -17px;*/
   border-width: 0px;
+  background-color: transparent;
+  margin-left: 3px;
+  padding-top:1px;
+  line-height: 13px;
 }
+
 
 .recom-page .item h4:last-child{
   line-height: 3.5;

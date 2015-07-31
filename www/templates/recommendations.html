@@ -14,15 +14,15 @@
 
       <p ><img ng-src="{{item.chaineImg}}" class="chaine-thumbnail"></i> 
         <a class ="monprog"> 
-          <h3 class="titre-programme">{{item.chaine}} : {{item.titre}}  <div class="item item-like">
+          <h3 class="titre-programme">{{item.chaine}} : {{item.titre}}  
+          </h3>
 
-        <a class="tab-item likeicon" ng-click="sendLikeFeedback($index)">
+          <a class="tab-item likeicon" ng-click="sendLikeFeedback($index)">
           <i ng-show="item.liked" class="icon ion-ios-heart "></i>
           <i ng-show="!item.liked" class="icon ion-ios-heart-outline"></i>
-        </a>
-      </div>
+          </a>
+      
 
-          </h3>
 
           <h4 class='sous-titre'>{{item.sousTitre}}, à {{item.heure}}. Durée : {{item.duree}}</h4>
         </a>
@@ -36,7 +36,7 @@
     
     <div id="tv-set-on-footer"> <!-- télévision qui s'affiche en bas de page -->
      
-      <div ng-show="programmeClicked>-1" >
+      <div ng-show="programmeClicked>-1" ng-click="openModal2()">
       <div id="current-programme" back-img="{{toDisplay.programmeImg}}"> </div>
          <p  class="description">  <!-- si un programme est cliqué par l'utilisateur, les détails s'affichent sur la télé à la place de la neige -->
           Accédez à la Description   </p>
