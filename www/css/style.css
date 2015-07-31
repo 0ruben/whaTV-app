@@ -161,12 +161,12 @@ a{
 }
 #current-programme{
   z-index: 2;
-  position:relative;
+  position:absolute;
   background-color: black;
-  height:65%;
+  height:63%;
   width:64%;
-  margin-left: 18%;
-  margin-top: 11.2%; 
+  top: 23%;
+  left:17.5%;
 }
 .background-green{
   background-color: #e7ec53;
@@ -277,7 +277,7 @@ background-size: 100vw;
   font-size: 10px;
   color: white;
   margin-left: 4px;
-  line-height: 14px;
+  line-height: 13px;
 }
 .skipped {
   -webkit-transform: translateX(-1000px) rotate(-50deg);
@@ -312,10 +312,12 @@ background-size: 100vw;
   /*margin-top: -17px;*/
   border-width: 0px;
 }
+
 .recom-page .item h4:last-child{
   line-height: 3.5;
 }
 .titre-programme{
+  padding-left: 1%;
   font-weight: 900;
   letter-spacing: 1px;
   font-size: 20px;
@@ -324,6 +326,8 @@ background-size: 100vw;
 .sous-titre{
   color: white;
   font-family: 'Nunito', sans-serif;
+  padding-top: 2%;
+  padding-left: 12%;
 }
 .account-page .bar .title {
   color: #e7ec53;;
