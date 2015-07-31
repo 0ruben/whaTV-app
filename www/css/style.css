@@ -161,9 +161,11 @@ a{
   z-index: 2;
   position:absolute;
   background-color: black;
-  height:66%;
+  background-size: cover;
   width:66%;
-  top: 22.5%;
+  height: 66%;
+  bottom: 12%;
+  top: 22%;
   left:16.5%;
   filter: blur(3px); 
  -webkit-filter: blur(3px);
@@ -275,10 +277,14 @@ background-size: 100vw;
 }
 
 .description{
-  font-size: 10px;
-  color: white;
-  margin-left: 4px;
-  line-height: 13px;
+  z-index: 4;
+  position: absolute;
+  font-size: 3.5vw;
+  color: black;
+  text-align: center;
+  bottom : 15%;
+  left : 27%;
+  font-weight: 600;
 }
 .skipped {
   -webkit-transform: translateX(-1000px) rotate(-50deg);
@@ -407,3 +413,4 @@ background-size: 100vw;
   margin-top: 10%;
   
 }
+

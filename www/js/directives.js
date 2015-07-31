@@ -7,7 +7,11 @@ angular.module('starter.directives', [])
         attrs.$observe('backImg', function(value) {
             element.css({
                 'background-image': 'url(' + value +')',
-                'background-size' : 'cover'
+                'background-size' : 'cover',
+                'z-index' : '2',
+
+	
+
             });
         });
     };
