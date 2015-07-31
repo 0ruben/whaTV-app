@@ -100,6 +100,7 @@ angular.module('starter.controllers', [])
  }
 })
 .controller('RecommendationsCtrl', function($scope, $stateParams,$state, $window, $ionicModal, User) {
+  $scope.programmeClicked=false;
   $scope.account=function(){
     $state.go('app.account');
   }
@@ -131,7 +132,15 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
-
+  $scope.clickProgramm=function(){
+    if ($scope.programmeClicked==false){
+    $scope.programmeClicked=true;
+    }
+    else{
+      $scope.programmeClicked=false;
+    }
+    
+  }
   $ionicModal.fromTemplateUrl('templates/search.html', {
     scope: $scope,
     animation: 'slide-in-up'

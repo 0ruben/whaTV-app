@@ -80,8 +80,10 @@ a{
 .recom-page{
   background-color: grey;
   background-image: url(../img/dark31.jpg);
-  /*background-repeat: no-repeat;*/
-  /*background-size: cover;*/
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index:1;
 }
 
 
@@ -115,6 +117,9 @@ a{
   color: white;
   margin-left: 40px;
 }
+
+
+
 .recom-page .settingsicon{
   font-size: 40px;
   margin:10px;
@@ -139,6 +144,26 @@ a{
   margin-left: 4vw;
   font-size: 15px;
  /* font-family: 'Montserrat', sans-serif;*/
+}
+
+#tv-set{
+    z-index:1;
+    background-image: url(../img/tv4.gif);
+    background-size: cover;
+    width: 90%;
+    height: 25%;
+    margin-left: 5%;
+    position: absolute;
+    bottom:3%;
+}
+#current-programme{
+  z-index: 2;
+  position:relative;
+  background-color: black;
+  height:65%;
+  width:64%;
+  margin-left: 18%;
+  margin-top: 11.2%; 
 }
 .background-green{
   background-color: #e7ec53;
@@ -243,4 +268,9 @@ background-size: 100vw;
   margin-left: 0px;
 }
 
+.description{
+  font-size: 10px;
+  color: white;
+  width: 90%;
 
+}

@@ -15,14 +15,15 @@
        <p> {{recommendation.description}}
       </ion-item> -->
 
-      <ion-item class="monprogramme">
+      <ion-item class="monprogramme" ng-click="clickProgramm()">
       <p ><img ng-src="img/tv-set.gif" class="tv-set"></i> <a class ="monprog">The Voice sur TF1 à 20h55. Aujourd'hui</a></p>
     </ion-item>
 
     </ion-list>
     
     <div id="tv-set">
-      <div id="current-programme">
+      <div id="current-programme" ng-show="programmeClicked">
+         <p  class="description"> The Voice sur TF1 à 20h55. - L'émission de musique sur la première chaine est toujours un succès. Le melomane et genie de la musique DJ Jabz vient nous faire découvrir ses derniers sons.</p>
       </div>
     </div>
 

@@ -268,4 +268,10 @@ background-size: 100vw;
   margin-left: 0px;
 }
 
+.description{
+  font-size: 10px;
+  color: white;
+  margin-left: 4px;
+  line-height: 14px;
 
+}

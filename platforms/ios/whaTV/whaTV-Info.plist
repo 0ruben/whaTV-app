@@ -86,6 +86,12 @@
           <string>fb1619367301653829</string>
         </array>
       </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb1619367301653829</string>
+        </array>
+      </dict>
     </array>
     <key>CFBundleVersion</key>
     <string>0.0.1</string>
