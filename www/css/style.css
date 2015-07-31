@@ -163,10 +163,13 @@ a{
   z-index: 2;
   position:absolute;
   background-color: black;
-  height:63%;
-  width:64%;
-  top: 23%;
-  left:17.5%;
+  height:66%;
+  width:66%;
+  top: 22.5%;
+  left:16.5%;
+  filter: blur(3px); 
+ -webkit-filter: blur(3px);
+  opacity: 0.8; 
 }
 .background-green{
   background-color: #e7ec53;
