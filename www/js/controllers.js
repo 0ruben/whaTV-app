@@ -112,7 +112,7 @@ angular.module('starter.controllers', [])
     duree:"2h10", 
     titre:"The Voice",
     sousTitre: 'Saison 3, épisode 11',
-    programmeImg:'../img/TF1.jpg',
+    programmeImg:'http://static1.purebreak.com/articles/5/53/77/5/@/179511-the-voice-2-promet-quelques-surprises-diapo-2.jpg',
     description: 'Cette émission de musique sur la première chaine est toujours un succès. Le melomane et genie de la musique DJ Jabz vient nous faire découvrir ses derniers sons.',
     casting : 'Jennifer, Mika, DJ Attia, Le Krull',
     liked : false
@@ -124,7 +124,7 @@ angular.module('starter.controllers', [])
     duree:"1h40", 
     titre:"Capital",
     sousTitre: 'Saison 2, épisode 1',
-    programmeImg:'../img/M6.jpg',
+    programmeImg:'http://cdn.im6.fr/02B5011D07766409-c1-photo-photo-capital-146821-1.jpg',
     description: 'Cette émission exceptionnelle raconte ce soir une incroyable histoire, celle de Alexandre - Le Tigre - Attia, devenu milliardaire à seulement 14 ans, à la suite de son invention géniale. Il obtint ensuite consécutivement 4 Meuf d\'or lors des 4 années suivantes',
     casting : 'Benjamin Castaldi, Katsuni, Madison Ivy, Le Krull',
     liked: false
@@ -135,7 +135,7 @@ angular.module('starter.controllers', [])
     duree:"2h10", 
     titre:"The Voice",
     sousTitre: 'Saison 3, épisode 11',
-    programmeImg:'../img/TF1.jpg',
+    programmeImg:'http://static1.purebreak.com/articles/5/53/77/5/@/179511-the-voice-2-promet-quelques-surprises-diapo-2.jpg',
     description: 'Cette émission de musique sur la première chaine est toujours un succès. Le melomane et genie de la musique DJ Jabz vient nous faire découvrir ses derniers sons.',
     casting : 'Jennifer, Mika, DJ Attia, Le Krull',
     liked : false
@@ -146,7 +146,7 @@ angular.module('starter.controllers', [])
     duree:"1h40", 
     titre:"Capital",
     sousTitre: 'Saison 2, épisode 1',
-    programmeImg:'../img/M6.jpg',
+    programmeImg:'http://cdn.im6.fr/02B5011D07766409-c1-photo-photo-capital-146821-1.jpg',
     description: 'Cette émission exceptionnelle raconte ce soir une incroyable histoire, celle de Alexandre - Le Tigre - Attia, devenu milliardaire à seulement 14 ans, à la suite de son invention géniale. Il obtint ensuite consécutivement 4 Meuf d\'or lors des 4 années suivantes',
     casting : 'Benjamin Castaldi, Katsuni, Madison Ivy, Le Krull',
     liked: false
@@ -157,7 +157,7 @@ angular.module('starter.controllers', [])
     duree:"2h10", 
     titre:"The Voice",
     sousTitre: 'Saison 3, épisode 11',
-    programmeImg:'../img/TF1.jpg',
+    programmeImg:'http://static1.purebreak.com/articles/5/53/77/5/@/179511-the-voice-2-promet-quelques-surprises-diapo-2.jpg',
     description: 'Cette émission de musique sur la première chaine est toujours un succès. Le melomane et genie de la musique DJ Jabz vient nous faire découvrir ses derniers sons.',
     casting : 'Jennifer, Mika, DJ Attia, Le Krull',
     liked : false
@@ -168,7 +168,7 @@ angular.module('starter.controllers', [])
     duree:"1h40", 
     titre:"Capital",
     sousTitre: 'Saison 2, épisode 1',
-    programmeImg:'../img/M6.jpg',
+    programmeImg:'http://cdn.im6.fr/02B5011D07766409-c1-photo-photo-capital-146821-1.jpg',
     liked: false
   }];
 

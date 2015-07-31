@@ -103,9 +103,7 @@ a{
   font-family: 'Lobster Two', cursive;
   font-weight: bold;
   letter-spacing: 1px;
-
 }
-
 .monprogramme{
   background-color: black;
   border-radius: 30px;
@@ -367,10 +365,45 @@ background-size: 100vw;
 .search-page .bar .title{
   color: #e7ec53;;
 }
-
 .recom-page .tab-item .icon{
     display: block;
     margin: 0 auto;
     height: 32px;
     font-size: 27px;
+}
+.description-page .title{
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+.descrip-page{
+  background-image : url(../img/dark31.jpg);
+  background-size: 300vw;
+  color: white;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  font-size: 16px;
+
+}
+
+.descrip-page .lobster{
+ font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+  color: #e7ec53;;
+}
+
+.descrip-page .chaine-thumbnail{
+  position: relative;
+  width: 13vw;
+  height: 8vw;
+}
+.descrip-page .sous-titre{
+  margin-left: -3vw;
+  position: absolute;
+}
+.descrip-page .programme-image{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 10%;
+  
 }

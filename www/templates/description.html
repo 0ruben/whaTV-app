@@ -5,8 +5,13 @@
    <h1 class="title">{{toDisplay.titre}} sur {{toDisplay.chaine}}</h1>
   </ion-header-bar>
 
-<ion-content>
-
+<ion-content class="descrip-page">
+<br>
+<p> <img ng-src="{{toDisplay.chaineImg}}" class="chaine-thumbnail"><a class="sous-titre">{{toDisplay.sousTitre}}</a>
+<p> <a class="lobster">Durée</a> : {{toDisplay.duree}}
+<p> <a class="lobster">Description</a> : {{toDisplay.description}}
+<p> <a class="lobster">Casting</a> : {{toDisplay.casting}}
+<img ng-src="{{toDisplay.programmeImg}}" class="programme-image">
 </ion-content>
 </div>
 </ion-modal view>
