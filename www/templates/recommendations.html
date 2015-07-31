@@ -11,7 +11,7 @@
 
       <ion-item ng-repeat="item in programmes" class="animated" ng-click="clickProgramme($index)" 
       ng-class="{rubberBand: rated == false, rubberBand: rated == true}">
-      <p ><img ng-src="programme.chaineImg" class="chaine-thumbnail"></i> 
+      <p ><img ng-src="{{item.chaineImg}}" class="chaine-thumbnail"></i> 
         <a class ="monprog"> 
           <h3 class="titre-programme">{{item.chaine}} : {{item.titre}} 
           </h3>
