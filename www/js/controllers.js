@@ -188,8 +188,9 @@ angular.module('starter.controllers', [])
   $scope.$on('$destroy', function() {
     $scope.modal.remove();
   });
+
 $scope.rated=false;
-  $scope.sendFeedback = function () {
+  $scope.sendLikeFeedback = function () {
     if($scope.rated==false){
       $scope.rated=true;
     }
