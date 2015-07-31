@@ -364,3 +364,10 @@ background-size: 100vw;
 .search-page .bar .title{
   color: #e7ec53;;
 }
+
+.recom-page .tab-item .icon{
+    display: block;
+    margin: 0 auto;
+    height: 32px;
+    font-size: 27px;
+}

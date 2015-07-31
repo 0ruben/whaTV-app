@@ -87,6 +87,15 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.service', 'st
         }
       }
     })
+    .state('app.description', {
+      url: '/:progId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/description.html',
+          controller: 'DescriptionCtrl'
+        }
+      }
+    })
 
     .state('app.connexion', {
       url: '/connexion',

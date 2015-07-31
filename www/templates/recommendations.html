@@ -35,7 +35,7 @@
     </ion-list>
     
     <div id="tv-set-on-footer"> <!-- télévision qui s'affiche en bas de page -->
-      <div id="current-programme" ng-show="programmeClicked>-1" back-img="{{toDisplay.programmeImg}}">
+      <div id="current-programme" ng-show="programmeClicked>-1" back-img="{{toDisplay.programmeImg}}" href="#/app/{{item.id}}">
          <p  class="description">  <!-- si un programme est cliqué par l'utilisateur, les détails s'affichent sur la télé à la place de la neige -->
         {{toDisplay.description}}
          </p>

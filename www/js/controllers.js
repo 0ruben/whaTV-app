@@ -105,6 +105,7 @@ angular.module('starter.controllers', [])
 
 //Pour tester l'interface :
   $scope.programmes = [{
+    id :0,
     chaine:'TF1',
     chaineImg: '../img/TF1.jpg', 
     heure:'20h50', 
@@ -116,6 +117,7 @@ angular.module('starter.controllers', [])
     casting : 'Jennifer, Mika, DJ Attia, Le Krull',
     liked : false
   },{
+    id:1,
     chaine:'M6', 
     chaineImg: '../img/M6.jpg',
     heure:'21h30', 
@@ -242,7 +244,20 @@ angular.module('starter.controllers', [])
   $scope.closeModal1 = function() {
     $scope.modal1.hide();
   };
+$ionicModal.fromTemplateUrl('templates/description.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal2 = modal
+  })  
 
+  $scope.openModal2 = function() {
+    $scope.modal2.show()
+  }
+
+  $scope.closeModal2 = function() {
+    $scope.modal2.hide();
+  };
   $scope.$on('$destroy', function() {
     $scope.modal.remove();
   });
@@ -262,6 +277,9 @@ angular.module('starter.controllers', [])
   $scope.facebookConnect=function(){
     fbConnect.connect();
   }
+})
+.controller('DescriptionCtrl', function() {
+
 })
 .controller('SearchCtrl', function($scope, Keywords) {
  Keywords.getAll().success(function(keywords){
