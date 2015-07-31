@@ -14,10 +14,17 @@
        <b> {{recommendaton.title}} </b> - {{recommendation.chaine}}
        <p> {{recommendation.description}}
       </ion-item> -->
+      <ion-item class="animated" ng-click="clickProgramm()" ng-class="{rubberBand: rated == false,
+       rubberBand: rated == true}">
+      <p ><img ng-src="img/tv-set.gif" class="tv-set"></i> <a class ="monprog">The Voice sur TF1. Aujourd'hui. 20:55. </a></p>
 
-      <ion-item class="monprogramme" ng-click="clickProgramm()">
-      <p ><img ng-src="img/tv-set.gif" class="tv-set"></i> <a class ="monprog">The Voice sur TF1 à 20h55. Aujourd'hui</a></p>
-    </ion-item>
+    </ion-item><div class="item item-like">
+
+        <a class="tab-item likeicon" ng-click="sendFeedback()">
+          <i ng-show="rated == true" class="icon ion-ios-heart rubberband"></i>
+          <i ng-show="rated==false" class="icon ion-ios-heart-outline rubberband"></i>
+        </a>
+      </div>
 
     </ion-list>
     

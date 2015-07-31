@@ -273,5 +273,38 @@ background-size: 100vw;
   color: white;
   margin-left: 4px;
   line-height: 14px;
+}
+.skipped {
+  -webkit-transform: translateX(-1000px) rotate(-50deg);
+  -ms-transform: translateX(-1000px) rotate(-50deg);
+  transform: translateX(-1000px) rotate(-50deg);
+  opacity:0;
+}
+.test1{
+  background-color: yellow;
+}
+.animated {
+  background-color: black;
+  border-radius: 30px;
+  width: 90%;
+  margin-top: 8vw;
+  margin-left: 5%;
+}
+.likeicon{
 
+  background-color: transparent;
+
+}
+.item-like{
+  position: fixed;
+  width: 20%;
+  background-color: transparent;
+  color: white;
+  margin-left: 40vw;
+  /*margin-top: -17px;*/
+  border-width: 0px;
+}
+.rubberBand{
+  border-color: #e7ec53;
+  border-width: 2px;
 }
