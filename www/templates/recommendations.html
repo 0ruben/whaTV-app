@@ -9,16 +9,18 @@
 
     <ion-list>
 
-      <!-- <ion-item ng-repeat="recommendation in recommendationss" >
-      <img ng-src="{{recommendation.logo}}">
-       <b> {{recommendaton.title}} </b> - {{recommendation.chaine}}
-       <p> {{recommendation.description}}
-      </ion-item> -->
-      <ion-item class="animated" ng-click="clickProgramm()" ng-class="{rubberBand: rated == false,
-       rubberBand: rated == true}">
-      <p ><img ng-src="img/tv-set.gif" class="tv-set"></i> <a class ="monprog">The Voice sur TF1. Aujourd'hui. 20:55. </a></p>
+      <ion-item ng-repeat="item in programmes" class="animated" ng-click="clickProgramme($index)" 
+      ng-class="{rubberBand: rated == false, rubberBand: rated == true}">
+      <p ><img ng-src="programme.chaineImg" class="chaine-thumbnail"></i> 
+        <a class ="monprog"> 
+          <h3 class="titre-programme">{{item.chaine}} : {{item.titre}} 
+          </h3>
 
-    </ion-item><div class="item item-like">
+          <h4 class='sous-titre'>, {{item.sousTitre}}, à {{item.heure}}. Durée : {{item.duree}}</h4>
+        </a>
+      </p>
+
+      <div class="item item-like">
 
         <a class="tab-item likeicon" ng-click="sendFeedback()">
           <i ng-show="rated == true" class="icon ion-ios-heart rubberband"></i>
@@ -26,11 +28,17 @@
         </a>
       </div>
 
+
+    </ion-item>
+
     </ion-list>
     
-    <div id="tv-set">
-      <div id="current-programme" ng-show="programmeClicked">
-         <p  class="description"> The Voice sur TF1 à 20h55. - L'émission de musique sur la première chaine est toujours un succès. Le melomane et genie de la musique DJ Jabz vient nous faire découvrir ses derniers sons.</p>
+    <div id="tv-set-on-footer"> <!-- télévision qui s'affiche en bas de page -->
+      <div id="current-programme" ng-show="programmeClicked>-1" back-img="{{toDisplay.programmeImg}}">
+         <p  class="description">  <!-- si un programme est cliqué par l'utilisateur, les détails s'affichent sur la télé à la place de la neige -->
+        {{toDisplay.description}}
+         </p>
+
       </div>
     </div>
 

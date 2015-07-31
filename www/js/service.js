@@ -242,3 +242,13 @@ return obj;
   return obj;
 }])
 
+.factory('Programmes',['$localStorage','$http',function($localStorage, $http){
+  var array = [];
+
+  array.getAll = function(){
+    // return $http.get(serverAddress+'/getKeywords/?user='+User.getUser().id+"&keyword="+word+"&limit="+limit);
+    return array;
+  }
+
+  return array;
+}])

@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 var serverAddress='http://62.210.115.66:1337';
 
-angular.module('starter', ['ionic', 'starter.controllers','starter.service'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.service', 'starter.directives'])
 .run(function($ionicPlatform, User, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

@@ -145,8 +145,13 @@ a{
   font-size: 15px;
  /* font-family: 'Montserrat', sans-serif;*/
 }
+.titre-programme{
+}
+.sous-titre{
+  color: white;
+}
 
-#tv-set{
+#tv-set-on-footer{
     z-index:1;
     background-image: url(../img/tv4.gif);
     background-size: cover;
@@ -262,7 +267,7 @@ background-size: 100vw;
   font-family: 'Montserrat', sans-serif;
 }
 
-.tv-set{
+.chaine-thumbnail{
   width: 9vw;
   position: absolute;
   margin-left: 0px;
@@ -291,9 +296,10 @@ background-size: 100vw;
   margin-left: 5%;
 }
 .likeicon{
-
   background-color: transparent;
-
+  margin-left: 3px;
+  padding-top:1px;
+  line-height: 13px;
 }
 .item-like{
   position: fixed;

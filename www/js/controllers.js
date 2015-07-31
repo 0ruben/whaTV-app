@@ -99,8 +99,33 @@ angular.module('starter.controllers', [])
               });
  }
 })
-.controller('RecommendationsCtrl', function($scope, $stateParams,$state, $window, $ionicModal, User) {
-  $scope.programmeClicked=false;
+.controller('RecommendationsCtrl', function($scope, Programmes, $stateParams,$state, $window, $ionicModal, User) {
+  $scope.programmes = Programmes.getAll();
+  $scope.programmeClicked=-1; //variable qui stocke l'indice du dernier programme clické par l'utilisateur
+
+//Pour tester l'interface :
+  $scope.programmes = [{
+    chaine:'TF1',
+    chaineImg: '../img/TF1.jpg', 
+    heure:'20h50', 
+    duree:"2h10", 
+    titre:"The Voice",
+    sousTitre: 'Saison 3, épisode 11',
+    programmeImg:'../img/TF1.jpg',
+    description: 'Cette émission de musique sur la première chaine est toujours un succès. Le melomane et genie de la musique DJ Jabz vient nous faire découvrir ses derniers sons.',
+    casting : 'Jennifer, Mika, DJ Attia, Le Krull'
+  },{
+    chaine:'M6', 
+    chaineImg: '../img/M6.jpg',
+    heure:'21h30', 
+    duree:"1h40", 
+    titre:"Capital",
+    sousTitre: 'Saison 2, épisode 1',
+    programmeImg:'../img/M6.jpg',
+    description: 'Cette émission exceptionnelle raconte ce soir une incroyable histoire, celle de Alexandre - Le Tigre - Attia, devenu milliardaire à seulement 14 ans, à la suite de son invention géniale. Il obtint ensuite consécutivement 4 Meuf d\'or lors des 4 années suivantes',
+    casting : 'Benjamin Castaldi, Katsuni, Madison Ivy, Le Krull'
+  }];
+
   $scope.account=function(){
     $state.go('app.account');
   }
@@ -132,15 +157,19 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
-  $scope.clickProgramm=function(){
-    if ($scope.programmeClicked==false){
-    $scope.programmeClicked=true;
+  $scope.toDisplay={description:'', programmeImg:''}; //objet à afficher dans la TV du bas
+
+  $scope.clickProgramme=function(index){ //fonction appelée lors du clic sur un programme recommandé
+    if ($scope.programmeClicked!=index){
+    $scope.programmeClicked=index;
+    $scope.toDisplay.description=$scope.programmes[index].description;
+    $scope.toDisplay.programmeImg=$scope.programmes[index].programmeImg;
     }
     else{
-      $scope.programmeClicked=false;
+      $scope.programmeClicked=-1;
     }
-    
   }
+
   $ionicModal.fromTemplateUrl('templates/search.html', {
     scope: $scope,
     animation: 'slide-in-up'
