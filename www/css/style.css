@@ -116,6 +116,8 @@ a{
 .monprog {
   color: white;
   margin-left: 40px;
+  position: fixed;
+  margin-top: -5px;
 }
 
 
@@ -149,6 +151,7 @@ a{
 }
 .sous-titre{
   color: white;
+  font-family: 'Nunito', sans-serif;
 }
 
 #tv-set-on-footer{
@@ -294,6 +297,7 @@ background-size: 100vw;
   width: 90%;
   margin-top: 8vw;
   margin-left: 5%;
+  height: 15vw;
 }
 .likeicon{
   background-color: transparent;
@@ -314,3 +318,7 @@ background-size: 100vw;
   border-color: #e7ec53;
   border-width: 2px;
 }
+.recom-page .item h4:last-child{
+  line-height: 3.5;
+}
+.recom-page 
