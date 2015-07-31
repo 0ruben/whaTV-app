@@ -1,1 +1,246 @@
-/* Empty. Add your own CSS if you like */
+.actu_header{
+   background-image: url('../img/blue.png');
+}
+.grey-item{
+  background-color: #45658f;
+}
+.account-page .grey-item,.account-page .item-radio{
+    background-color: transparent;
+    color: white;
+}
+.signin-page .homepage_logo{
+  width: 80px;
+}
+@font-face {
+    font-family: Fredoka;
+    src: url('../fonts/FredokaOne-Regular.ttf');
+}
+.homepage_title{
+  text-align: center;
+}
+.homepage_logo{
+  width: 40px;
+
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+}
+.signin-page .homepage_button{
+  
+  margin: 0 auto;
+  display:block;
+  text-align:center;
+  color: #e7ec53;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bold;
+  letter-spacing: -2px;
+  cursor:pointer;
+  font-size:20px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-bottom: 10vw;
+  margin-top: 10vw;
+  width: 40%;
+  border-color: black;
+  background-color: transparent;
+}
+.signin-page {
+background-image: url(../img/dark31.jpg);
+/*background-color: grey;
+background-size: cover;*/
+}
+a{
+  text-decoration: none;
+}
+
+
+.signin-page .homepage_fb{
+  width: 70%;
+}
+
+
+.scroll{
+  height: 100%;
+}
+
+.register-button{
+  color:yellow;
+  border-radius: 15px;
+  width: 50%;
+  background-color: transparent;
+  margin-left: 30vw;
+
+}
+.hidden{
+  display: none;
+}
+.settingsicon{
+  font-size: 30px;
+}
+.recom-page{
+  background-color: grey;
+  background-image: url(../img/dark31.jpg);
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
+}
+
+
+.recommendations-header{
+  background-color: black;
+  
+}
+
+.recom-page-title{
+  padding-bottom: 0vw;
+  margin-bottom: 3vw;
+  font-size: 5vw;
+  display: inline-block;
+  margin-left: 20%;
+  position: absolute;
+  color:#e7ec53;
+  font-family: 'Lobster Two', cursive;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+}
+
+.monprogramme{
+  background-color: black;
+  border-radius: 30px;
+  width: 90%;
+  margin-top: 8vw;
+  margin-left: 5%;
+}
+.monprog {
+  color: white;
+  margin-left: 40px;
+}
+.recom-page .settingsicon{
+  font-size: 40px;
+  margin:10px;
+  display: inline-block;
+    color:#e7ec53;
+
+}
+
+
+.recom-page .plusicon{
+  font-size: 38px;
+  margin-left: 70%;
+  display: inline-block;
+  color:#e7ec53;
+  text-align: right;
+}
+
+
+.recom-page .title h1{
+  display: inline-block;
+
+  margin-left: 4vw;
+  font-size: 15px;
+ /* font-family: 'Montserrat', sans-serif;*/
+}
+.background-green{
+  background-color: #e7ec53;
+}
+.keyword-input{
+  border-radius: 30px;
+}
+.keyword-container{
+  height: 100%;
+}
+.keyword-element{
+  background-color: #fff;
+  width: 70%;
+  margin-left: 15%;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.keyword-element p{
+  margin-bottom: 0px;
+  text-align: center;
+  font-family: Fredoka, sans-serif;
+}
+
+.login-form {
+  font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
+
+}
+
+
+
+.register-view h1{
+}
+
+.registeritem{
+  color: #e7ec53;
+}
+
+.register-view .closebutton{
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 19vw;
+}
+
+.button.button-block.button-positive{
+  background-color: black;
+  color : #e7ec53;
+  font-weight: bold;
+}
+
+.login-view{
+  background-color: black;
+  background-image : url(../img/dark31.jpg);
+
+}
+
+.login-header-bar{
+  /*background-color: black;*/
+  font-color: white;
+}
+
+
+/*.button.homepage_fb.homepage_button{
+background-image:url(../img/fconnect.png);
+background-size: 100vw;
+}*/
+
+
+.search-page, .account-page{
+  background-image : url(../img/dark31.jpg);
+  background-size: 300vw;
+
+}
+
+.ion-chevron-down.icon_modal{
+  font-size: 7vw;
+  padding-top: 1vw;
+  padding-left: 2vw;
+}
+
+
+.myname{
+  text-align: center;
+  font-size: 20px;
+}
+
+.keyword-added{
+  font-size: 30px;
+  font-family: Fredoka, sans-serif;
+}
+.signin-page .mytitle h1{
+  color: white;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tv-set{
+  width: 9vw;
+  position: absolute;
+  margin-left: 0px;
+}
+
+

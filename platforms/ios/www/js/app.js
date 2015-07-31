@@ -4,12 +4,20 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+var serverAddress='http://62.210.115.66:1337';
 
-.run(function($ionicPlatform) {
+angular.module('starter', ['ionic', 'starter.controllers','starter.service'])
+.run(function($ionicPlatform, User, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
+  $ionicPlatform.on("resume",function(){
+        User.checkSession().then(function(hasSession) {
+        if (!hasSession){ $state.go('app.connexion');}
+        else{$state.go('app.recommendations');}
+      });
+  })
+  
+      
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
@@ -36,7 +44,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/search',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/search.html',
+        controller: 'SearchCtrl'
       }
     }
   })
@@ -59,6 +68,55 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.recommendations', {
+      url: '/recommendations',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/recommendations.html',
+          controller: 'RecommendationsCtrl'
+        }
+      }
+    })
+
+    .state('app.account', {
+      url: '/account',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/account.html',
+          controller: 'AccountCtrl'
+        }
+      }
+    })
+
+    .state('app.connexion', {
+      url: '/connexion',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/connexion.html',
+          controller: 'ConnexionCtrl'
+        }
+      }
+    })
+
+    .state('app.login', {
+      url: '/login',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/login.html',
+          controller: 'LoginCtrl'
+        }
+      }
+    })
+    .state('app.register', {
+      url: '/register',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/register.html',
+          controller: 'RegisterCtrl'
+        }
+      }
+    })
+
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
@@ -69,5 +127,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/recommendations');
 });

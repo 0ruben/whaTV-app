@@ -6,7 +6,7 @@
 }
 .account-page .grey-item,.account-page .item-radio{
     background-color: transparent;
-    color: black;
+    color: white;
 }
 .signin-page .homepage_logo{
   width: 80px;
@@ -47,7 +47,7 @@
 .signin-page {
 background-image: url(../img/dark31.jpg);
 /*background-color: grey;
-*/background-size: cover;
+background-size: cover;*/
 }
 a{
   text-decoration: none;
@@ -80,8 +80,8 @@ a{
 .recom-page{
   background-color: grey;
   background-image: url(../img/dark31.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
 }
 
 
@@ -104,7 +104,17 @@ a{
 
 }
 
-
+.monprogramme{
+  background-color: black;
+  border-radius: 30px;
+  width: 90%;
+  margin-top: 8vw;
+  margin-left: 5%;
+}
+.monprog {
+  color: white;
+  margin-left: 40px;
+}
 .recom-page .settingsicon{
   font-size: 40px;
   margin:10px;
@@ -227,9 +237,10 @@ background-size: 100vw;
   font-family: 'Montserrat', sans-serif;
 }
 
-.signin-page {
-background-image: url(../img/fond4.jpg);
-background-size: cover;
-
+.tv-set{
+  width: 9vw;
+  position: absolute;
+  margin-left: 0px;
 }
+
 

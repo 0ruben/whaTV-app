@@ -13,14 +13,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"ios-package\" value=\"FacebookConnectPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
@@ -46,6 +38,14 @@
                         },
                         {
                             "xml": "<access origin=\"https://*.akamaihd.net\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -105,18 +105,18 @@
     },
     "installed_plugins": {
         "com.ionic.keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.whatv779571"
-        },
-        "org.apache.cordova.console": {
-            "PACKAGE_NAME": "com.ionicframework.whatv779571"
-        },
-        "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.ionicframework.whatv779571"
+            "PACKAGE_NAME": "com.whatv.app"
         },
         "com.phonegap.plugins.facebookconnect": {
             "APP_ID": "1619367301653829",
             "APP_NAME": "whatv",
-            "PACKAGE_NAME": "com.ionicframework.whatv779571"
+            "PACKAGE_NAME": "com.whatv.app"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.whatv.app"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.whatv.app"
         }
     },
     "dependent_plugins": {}
