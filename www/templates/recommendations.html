@@ -10,26 +10,24 @@
     <ion-list>
 
       <ion-item ng-repeat="item in programmes" class="animated" ng-click="clickProgramme($index)" 
-      ng-class="{rubberBand: rated[$index] == true}">
+      ng-class="{rubberBand: item.liked}">
+
       <p ><img ng-src="{{item.chaineImg}}" class="chaine-thumbnail"></i> 
-
-      
-
         <a class ="monprog"> 
-          <h3 class="titre-programme">{{item.chaine}} : {{item.titre}} 
+          <h3 class="titre-programme">{{item.chaine}} : {{item.titre}}  <div class="item item-like">
+
+        <a class="tab-item likeicon" ng-click="sendLikeFeedback($index)">
+          <i ng-show="item.liked" class="icon ion-ios-heart rubberband"></i>
+          <i ng-show="!item.liked" class="icon ion-ios-heart-outline rubberband"></i>
+        </a>
+      </div>
+
           </h3>
 
           <h4 class='sous-titre'>{{item.sousTitre}}, à {{item.heure}}. Durée : {{item.duree}}</h4>
         </a>
       </p>
 
-      <div class="item item-like">
-
-        <a class="tab-item likeicon" ng-click="sendLikeFeedback()">
-          <i ng-show="rated == true" class="icon ion-ios-heart rubberband"></i>
-          <i ng-show="rated==false" class="icon ion-ios-heart-outline rubberband"></i>
-        </a>
-      </div>
 
 
     </ion-item>

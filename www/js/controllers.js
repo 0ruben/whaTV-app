@@ -113,7 +113,8 @@ angular.module('starter.controllers', [])
     sousTitre: 'Saison 3, épisode 11',
     programmeImg:'../img/TF1.jpg',
     description: 'Cette émission de musique sur la première chaine est toujours un succès. Le melomane et genie de la musique DJ Jabz vient nous faire découvrir ses derniers sons.',
-    casting : 'Jennifer, Mika, DJ Attia, Le Krull'
+    casting : 'Jennifer, Mika, DJ Attia, Le Krull',
+    liked : false
   },{
     chaine:'M6', 
     chaineImg: '../img/M6.jpg',
@@ -123,7 +124,8 @@ angular.module('starter.controllers', [])
     sousTitre: 'Saison 2, épisode 1',
     programmeImg:'../img/M6.jpg',
     description: 'Cette émission exceptionnelle raconte ce soir une incroyable histoire, celle de Alexandre - Le Tigre - Attia, devenu milliardaire à seulement 14 ans, à la suite de son invention géniale. Il obtint ensuite consécutivement 4 Meuf d\'or lors des 4 années suivantes',
-    casting : 'Benjamin Castaldi, Katsuni, Madison Ivy, Le Krull'
+    casting : 'Benjamin Castaldi, Katsuni, Madison Ivy, Le Krull',
+    liked: false
   }];
 
   $scope.account=function(){
@@ -189,13 +191,12 @@ angular.module('starter.controllers', [])
     $scope.modal.remove();
   });
 
-$scope.rated=false;
-  $scope.sendLikeFeedback = function () {
-    if($scope.rated==false){
-      $scope.rated=true;
+  $scope.sendLikeFeedback = function (index) {
+    if($scope.programmes[index].liked==false){
+      $scope.programmes[index].liked=true;
     }
     else{
-       $scope.rated = false;
+       $scope.programmes[index].liked= false;
     }
    
   }
