@@ -1,5 +1,5 @@
 .actu_header{
-   background-image: url('../img/blue.png');
+   background-color: black;
 }
 .grey-item{
   background-color: #45658f;
@@ -327,4 +327,26 @@ background-size: 100vw;
 .sous-titre{
   color: white;
   font-family: 'Nunito', sans-serif;
+}
+.account-page .bar .title {
+  color: white;
+}
+.ion-chevron-down.icon_modal {
+    font-size: 7vw;
+    padding-top: 1vw;
+    padding-left: 2vw;
+    color: white;
+ }
+ .account-page .toggle input + .track{
+  background-color: black;
+  border-color:#e7ec53;
+}
+ .account-page .toggle input:checked + .track{
+  background-color: #e7ec53;
+  border-color:#e7ec53;
+}
+.account-page .item-divider {
+    
+    color: white;
+    font-weight: 900;
 }
