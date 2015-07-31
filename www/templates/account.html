@@ -19,13 +19,13 @@
   <div class="item item-divider account-page"> 
           Frequence des Notifications
   </div>
-     <div class="grey-item">   
+     <div class="other-item">   
         <ion-radio ng-repeat="item in clientSideList"
                    ng-value="item.value"
                    ng-model="data.clientSide"
                    ng-click="chgmtFreq('freq', item.value)"
-                   class="grey-item">
-          <a class="grey-item">{{ item.text }}</a>
+                   class="freq-item">
+          <a class="freq-item-text">{{ item.text }}</a>
         </ion-radio>
 </div>
   </div>

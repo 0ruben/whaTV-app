@@ -330,13 +330,13 @@ background-size: 100vw;
   font-family: 'Nunito', sans-serif;
 }
 .account-page .bar .title {
-  color: white;
+  color: #e7ec53;;
 }
 .ion-chevron-down.icon_modal {
     font-size: 7vw;
     padding-top: 1vw;
     padding-left: 2vw;
-    color: white;
+    color: #e7ec53;;
  }
  .account-page .toggle input + .track{
   background-color: black;
@@ -350,4 +350,17 @@ background-size: 100vw;
     
     color: white;
     font-weight: 900;
+}
+.account-page .freq-item{
+  color: black;
+  background-color: black;
+  border-radius: 40px;
+  margin: 5px;
+  margin-top: 10px;
+  text-align: center;
+  width: 60%;
+  margin-left: 20%;
+}
+.search-page .bar .title{
+  color: #e7ec53;;
 }
