@@ -1,16 +1,16 @@
 angular.module('starter.directives', [])
 
 
-.directive('backImg', function(){
-    return function(scope, element, attrs){
+.directive('backImg', function() {
+    return function(scope, element, attrs) {
 
         attrs.$observe('backImg', function(value) {
             element.css({
-                'background-image': 'url(' + value +')',
-                'background-size' : 'cover',
-                'z-index' : '2',
+                'background-image': 'url(' + value + ')',
+                'background-size': 'cover',
+                'z-index': '2',
 
-	
+
 
             });
         });

@@ -1,34 +1,25 @@
-
 <ion-modal view title="Account">
-  <div class="modal account-page">
-
-   <ion-header-bar class="actu_header">
-     <i class="ion-chevron-down icon_modal" ng-click="closeModal()"></i>
-   <h1 class="title">Mon compte </h1>
-  </ion-header-bar>
-
-
-    <ion-content class="has-header account-page">
-  <h1 class="myname">{{user.username}}</h1>
-  <ion-item  ng-click="logout()" class="grey-item"> Deconnexion </ion-item>
-  <ion-toggle ng-model="is_notif" ng-change="chgmtFreq('notif', is_notif )" class="grey-item">
-    Activer les notifications
-  </ion-toggle>
-
-  <div ng-show="is_notif">
-  <div class="item item-divider account-page"> 
-          Frequence des Notifications
-  </div>
-     <div class="other-item">   
-        <ion-radio ng-repeat="item in clientSideList"
-                   ng-value="item.value"
-                   ng-model="data.clientSide"
-                   ng-click="chgmtFreq('freq', item.value)"
-                   class="freq-item">
-          <a class="freq-item-text">{{ item.text }}</a>
-        </ion-radio>
-</div>
-  </div>
-  </ion-content>
-  </div>
+    <div class="modal account-page">
+        <ion-header-bar class="actu_header">
+            <i class="ion-chevron-down icon_modal" ng-click="closeModal()"></i>
+            <h1 class="title">Mon compte </h1>
+        </ion-header-bar>
+        <ion-content class="has-header account-page">
+            <h1 class="myname">{{user.username}}</h1>
+            <ion-item ng-click="logout()" class="grey-item"> Deconnexion </ion-item>
+            <ion-toggle ng-model="is_notif" ng-change="chgmtFreq('notif', is_notif )" class="grey-item">
+                Activer les notifications
+            </ion-toggle>
+            <div ng-show="is_notif">
+                <div class="item item-divider account-page">
+                    Frequence des Notifications
+                </div>
+                <div class="other-item">
+                    <ion-radio ng-repeat="item in clientSideList" ng-value="item.value" ng-model="data.clientSide" ng-click="chgmtFreq('freq', item.value)" class="freq-item">
+                        <a class="freq-item-text">{{ item.text }}</a>
+                    </ion-radio>
+                </div>
+            </div>
+        </ion-content>
+    </div>
 </ion-modal view>
