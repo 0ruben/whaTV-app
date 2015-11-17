@@ -111,23 +111,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.service', 's
     })
 
     .state('app.login', {
-            url: '/login',
-            views: {
-                'menuContent': {
-                    templateUrl: 'templates/login.html',
-                    controller: 'LoginCtrl'
-                }
+        url: '/login',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/login.html',
+                controller: 'LoginCtrl'
             }
-        })
-        .state('app.register', {
-            url: '/register',
-            views: {
-                'menuContent': {
-                    templateUrl: 'templates/register.html',
-                    controller: 'RegisterCtrl'
-                }
+        }
+    })
+
+    .state('app.register', {
+        url: '/register',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/register.html',
+                controller: 'RegisterCtrl'
             }
-        })
+        }
+    })
 
     .state('app.single', {
         url: '/playlists/:playlistId',
