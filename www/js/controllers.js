@@ -87,8 +87,7 @@ angular.module('starter.controllers', [])
     $scope.regularConnect = function(user) {
         User.register(user).success(function(user) {
             $localStorage.setObject('user', user);
-            // $ionicLoading.hide();
-            console.log("here");
+            $localStorage.setObject('keywords', []);
             $location.path('/');
 
 
@@ -107,7 +106,9 @@ angular.module('starter.controllers', [])
     $scope.connect = function(user) {
         User.login(user).success(function(user) {
             $localStorage.setObject('user', user);
-            //$ionicLoading.hide();
+                Keywords.getAll().success(function(keywords) {
+                    $localStorage.setObject('keywords', keywords);
+                });           
             $location.path('/');
 
 
@@ -124,7 +125,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('RecommendationsCtrl', function($scope, Programmes, $stateParams, $state, $window, $ionicModal, User) {
+.controller('RecommendationsCtrl', function($scope, Programmes, $stateParams, $state, $window, $ionicModal, User, $localStorage, Keywords) {
     $scope.programmes = Programmes.getAll();
     $scope.programmeClicked = -1; //variable qui stocke l'indice du dernier programme clické par l'utilisateur
 
@@ -250,6 +251,17 @@ angular.module('starter.controllers', [])
         }
     }
 
+    $scope.keywords = $localStorage.getObject('keywords');
+
+    $scope.searchKey = function(key){
+        Keywords.search(key).success(function(keywords){
+            if(key.length == 0)
+                $scope.keywords = $localStorage.getObject('keywords');
+            else
+                $scope.keywords = keywords;
+        });
+    }
+
     $ionicModal.fromTemplateUrl('templates/search.html', {
         scope: $scope,
         animation: 'slide-in-up'
@@ -309,6 +321,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SearchCtrl', function($scope, Keywords) {
+
     Keywords.getAll().success(function(keywords) {
         $scope.keywords = keywords;
     }).error(function(err) {

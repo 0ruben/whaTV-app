@@ -1,6 +1,6 @@
 angular.module('starter.service', [])
 
-.factory('fbConnect', ['$http', '$localStorage', '$rootScope', '$ionicLoading', '$ionicPlatform', '$location', '$q', function($http, $localStorage, $rootScope, $ionicLoading, $ionicPlatform, $location, $q, $connection) {
+.factory('fbConnect', ['$http', '$localStorage', '$rootScope', '$ionicLoading', '$ionicPlatform', '$location','Keywords','$q', function($http, $localStorage, $rootScope, $ionicLoading, $ionicPlatform, $location, Keywords, $q, $connection) {
 
     //FACEBOOK CONNECT BEGINS
 
@@ -96,7 +96,6 @@ angular.module('starter.service', [])
                 //get user info from FB
                 obj.getFacebookProfileInfo().then(function(data) {
                     var user = data;
-                    console.log(user);
 
                     // user.picture = "http://graph.facebook.com/"+fb_uid+"/picture?width=400&height=400";
                     // user.access_token = fb_access_token;
@@ -110,7 +109,9 @@ angular.module('starter.service', [])
                         facebook_id: fb_uid
                     }).success(function(response) {
                         $localStorage.setObject('user', response);
-
+                        Keywords.getAll(LIMITE_KEYWORDS).success(function(keywords) {
+                            $localStorage.setObject('keywords', keywords);
+                        });    
                         $ionicLoading.hide();
                         $location.path('/');
 
@@ -232,11 +233,11 @@ angular.module('starter.service', [])
     }])
 
 
-.factory('Keywords', ['$localStorage', '$http', function($localStorage, $http) {
+.factory('Keywords', ['$localStorage', '$http', 'User', function($localStorage, $http, User) {
     var obj = {};
 
-    obj.getAll = function(word, limit) {
-        return $http.get(serverAddress + '/getKeywords/?user=' + User.getUser().id + "&keyword=" + word + "&limit=" + limit);
+    obj.getAll = function() {
+        return $http.get(serverAddress + '/user/getKeywords?user=' + User.getUser().id );
     }
 
     obj.addElement = function(elem, event) {
@@ -251,6 +252,10 @@ angular.module('starter.service', [])
             user: User.getUser().id,
             kw: elem.id
         });
+    }
+
+    obj.search = function(word){
+        return $http.post(serverAddress + '/keyword/search', {keywords: $localStorage.getObject('keywords'), keyword: word});
     }
 
     return obj;

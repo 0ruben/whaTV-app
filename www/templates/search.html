@@ -9,11 +9,11 @@
                 <div class="list list-inset keyword-input">
                     <label class="item item-input">
                         <i class="icon ion-search placeholder-icon"></i>
-                        <input type="text" placeholder="Chercher un mot clé">
+                        <input type="text" placeholder="Chercher un mot clé" ng-model="key" ng-keyup="searchKey(key)">
                     </label>
                 </div>
                 <div on-release="addElem(keyword,$event)" on-touch="swing($event)" class="keyword-element" ng-repeat="keyword in keywords">
-                    <p> {{keyword}} </p>
+                    <p> {{keyword.str}} </p>
                 </div>
             </div>
         </ion-content>

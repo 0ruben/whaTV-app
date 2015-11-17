@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 var serverAddress = 'http://localhost:1337';
+var LIMITE_KEYWORDS = 30;
 
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.service', 'starter.directives'])
     .run(function($ionicPlatform, User, $state) {
