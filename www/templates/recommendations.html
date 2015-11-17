@@ -1,16 +1,18 @@
 <ion-view view-title="Your Recommendations" class="recom-page">
+
     <ion-content>
+
         <header class="recommendations-header">
             <i class="settingsicon ion-settings" ng-click="openModal()"></i>
             <h1 class="recom-page-title"> Vos Programmes </h1>
             <i class="plusicon ion-plus-round" ng-click="openModal1()"></i>
         </header>
+
         <ion-list>
             <ion-item ng-repeat="item in programmes" class="animated" ng-click="clickProgramme($index)" ng-class="{rubberBand: item.liked}">
                 <p><img ng-src="{{item.chaineImg}}" class="chaine-thumbnail"></i>
                     <a class="monprog">
-                        <h3 class="titre-programme">{{item.chaine}} : {{item.titre}}  
-          </h3>
+                        <h3 class="titre-programme">{{item.chaine}} : {{item.titre}}</h3>
                         <a class="tab-item likeicon" ng-click="sendLikeFeedback($index)">
                             <i ng-show="item.liked" class="icon ion-ios-heart "></i>
                             <i ng-show="!item.liked" class="icon ion-ios-heart-outline"></i>
@@ -20,6 +22,7 @@
                 </p>
             </ion-item>
         </ion-list>
+
         <div id="tv-set-on-footer">
             <!-- télévision qui s'affiche en bas de page -->
             <div ng-show="programmeClicked>-1" ng-click="openModal2()">
@@ -29,5 +32,7 @@
                     Accédez à la Description </p>
             </div>
         </div>
+        
     </ion-content>
+
 </ion-view>

@@ -6,21 +6,17 @@
             <div class="mytitle">
                 <h1> Identifiez-Vous </h1>
             </div>
-            <a href="#/app/login">
-                <button class="button homepage_connect homepage_button icon-right ion-chevron-right">
-                    Connexion
-                </button>
-            </a>
+            <button class="button homepage_connect homepage_button icon-right ion-chevron-right" ng-click="goLogin()">
+                Connexion
+            </button>
             <a ng-click="facebookConnect()">
                 <button class="button homepage_fb homepage_button">
                     Connexion via Facebook
                 </button>
             </a>
-            <a href="#/app/register">
-                <button class="button homepage_register homepage_button icon-right ion-chevron-right">
-                    Inscription
-                </button>
-            </a>
+            <button class="button homepage_register homepage_button icon-right ion-chevron-right" ng-click="goRegister()">
+                Inscription
+            </button>
             <p class="err_container"> {{err}} </p>
         </div>
     </ion-content>

@@ -83,9 +83,8 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('RegisterCtrl', function($scope, User, $stateParams, $localStorage, $location) {
+.controller('RegisterCtrl', function($scope, $state, User, $stateParams, $localStorage, $location) {
     $scope.regularConnect = function(user) {
-        console.log(user);
         User.register(user).success(function(user) {
             $localStorage.setObject('user', user);
             // $ionicLoading.hide();
@@ -97,7 +96,10 @@ angular.module('starter.controllers', [])
             console.log(err);
             $scope.err = "Problème lors de l'inscription";
         });
+    }
 
+    $scope.goConnexion = function() {
+        $state.go('app.connexion')
     }
 })
 
@@ -115,9 +117,11 @@ angular.module('starter.controllers', [])
         });
     };
 
-    $scope.goLogin = function() {
-        $state.go('app.login');
-    };
+    $scope.goConnexion = function() {
+        $state.go('app.connexion');
+    }
+
+
 })
 
 .controller('RecommendationsCtrl', function($scope, Programmes, $stateParams, $state, $window, $ionicModal, User) {
@@ -187,11 +191,13 @@ angular.module('starter.controllers', [])
     $scope.account = function() {
         $state.go('app.account');
     }
+
     $scope.logout = function() {
         User.destroySession();
         $scope.modal.hide();
         $state.go('app.connexion');
     }
+
     $scope.clientSideList = [{
         text: "Quotidien",
         value: "q"
@@ -202,9 +208,11 @@ angular.module('starter.controllers', [])
         text: "Mensuel",
         value: "m"
     }];
+
     $scope.chgmtFreq = function(attribute, value) {
         User.setNotifPref(attribute, value);
     }
+    
     $ionicModal.fromTemplateUrl('templates/account.html', {
         scope: $scope,
         animation: 'slide-in-up'
@@ -283,30 +291,39 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('ConnexionCtrl', function($scope, $stateParams, fbConnect) {
-        $scope.facebookConnect = function() {
-            fbConnect.connect();
-        }
+.controller('ConnexionCtrl', function($scope, $state, $stateParams, fbConnect) {
+    $scope.facebookConnect = function() {
+        fbConnect.connect();
+    }
+    $scope.goLogin = function() {
+        $state.go('app.login');
+    };
+    $scope.goRegister = function() {
+        $state.go('app.register');
+    };
+
+})
+
+.controller('DescriptionCtrl', function() {
+
+})
+
+.controller('SearchCtrl', function($scope, Keywords) {
+    Keywords.getAll().success(function(keywords) {
+        $scope.keywords = keywords;
+    }).error(function(err) {
+        console.log(err);
     })
-    .controller('DescriptionCtrl', function() {
 
-    })
-    .controller('SearchCtrl', function($scope, Keywords) {
-        Keywords.getAll().success(function(keywords) {
-            $scope.keywords = keywords;
-        }).error(function(err) {
-            console.log(err);
-        })
+    $scope.addElem = function(elem, event) {
+        Keywords.addElement(elem, event);
+    }
 
-        $scope.addElem = function(elem, event) {
-            Keywords.addElement(elem, event);
-        }
-
-        $scope.swing = function(e) {
-            if (!$(e.target).hasClass('keyword-element'))
-                elem = $(e.target).parent('.keyword-element');
-            else
-                elem = e.target;
-            $(elem).addClass('animated swing');
-        }
-    });
+    $scope.swing = function(e) {
+        if (!$(e.target).hasClass('keyword-element'))
+            elem = $(e.target).parent('.keyword-element');
+        else
+            elem = e.target;
+        $(elem).addClass('animated swing');
+    }
+});
